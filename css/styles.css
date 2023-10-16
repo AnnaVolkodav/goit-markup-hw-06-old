@@ -57,6 +57,10 @@ img {
 .header-container {
   display: flex;
   justify-content: space-between;
+  padding: 18px 0;
+}
+
+.header-logo-mob {
 }
 
 .header-navigation {
@@ -72,7 +76,7 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
+  /* margin-right: 76px; */
 }
 
 .nav-studio-link {
@@ -1080,7 +1084,10 @@ img {
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
-    padding: 100px 16px;
+    padding: 0 16px;
+  }
+
+  .header-container {
   }
 
   /* ?=section 2 hero= */
@@ -1088,7 +1095,6 @@ img {
     padding: 188px 0;
     max-width: 1158px;
     max-height: 600px;
-    /* max-height: 600px; */
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
