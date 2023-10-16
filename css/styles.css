@@ -196,10 +196,10 @@ img {
   (min-resolution: 2dppx) {
   .hero {
     background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(/images/hero/bg-hero-mob-2x.jpg);
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(/images/hero/bg-hero-mob-2x.jpg);
   }
 }
 
@@ -505,21 +505,22 @@ img {
 
 .foot-section {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 72px;
+  /* align-items: baseline; */
 }
 
 .foot-logo-wrapper {
-  max-width: 264px;
-  margin-right: 120px;
+  max-width: 288px;
 }
 
 .foot-logo-link {
-  display: inline-block;
+  display: flex;
   color: #4d5ae5;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -528,6 +529,8 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-lightcolor {
@@ -557,11 +560,13 @@ img {
   letter-spacing: 0.02em;
   /* автоперевірка не пропускає без цього марджина */
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .foot-social-list {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 
 .foot-social-item {
@@ -605,7 +610,7 @@ img {
 /*?====FOOTER FORM==== */
 
 .footer-form {
-  margin-left: 80px;
+  /* margin-left: 80px; */
 }
 
 .foot-label {
@@ -615,18 +620,23 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .foot-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .foot-form-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   border-radius: 4px;
   border: 1px solid #ffffff;
+  opacity: 0.3;
   background-color: transparent;
   outline: transparent;
   color: #ffffff;
@@ -967,16 +977,16 @@ img {
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(/images/hero/bg-hero-tab-2x.jpg);
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(/images/hero/bg-hero-tab-2x.jpg);
+    }
   }
-}
 
   .hero-title {
     font-size: 56px;
@@ -1026,13 +1036,51 @@ img {
   .oportfolio-loved {
     width: 100%;
   }
+
+  /* ?=footer section= */
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .foot-tab-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* gap: 24px; */
+  }
+
+  .foot-logo-wrapper {
+    max-width: 264px;
+    margin-right: 24px;
+  }
+
+  .foot-logo-link {
+    justify-content: flex-start;
+  }
+
+  .foot-social-title {
+    text-align: left;
+  }
+
+  .foot-label {
+    text-align: left;
+  }
+
+  .foot-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .foot-form-input {
+    max-width: 264px;
+  }
 }
 
 /* ! */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
-    padding: 0;
+    padding: 100px 16px;
   }
 
   /* ?=section 2 hero= */
@@ -1048,16 +1096,16 @@ img {
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(/images/hero/bg-hero-image-2x.jpg);
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(/images/hero/bg-hero-image-2x.jpg);
+    }
   }
-}
 
   .our-purpose-list {
     gap: 24px;
@@ -1119,5 +1167,32 @@ img {
 
   .oportfolio-item:hover .overlay-text {
     transform: translateY(0%);
+  }
+
+  /* ?=footer section=*/
+  .foot-section {
+    padding: 100px 0;
+  }
+
+  .footer-container {
+    flex-wrap: nowrap;
+    align-items: baseline;
+  }
+
+  /* .foot-tab-wrapper {
+    display: inline-block;
+  } */
+
+  .foot-logo-wrapper {
+    margin-right: 120px;
+  }
+
+  .footer-form {
+    margin-right: auto;
+  }
+
+  .foot-form-input {
+    width: 264px;
+    opacity: 1;
   }
 }
